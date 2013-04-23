@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>649</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="1">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Enable</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Socat</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Tor</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>Enable</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>9</number>
+      </property>
+      <widget class="QWidget" name="tab_whatweb">
+       <attribute name="title">
+        <string>WhatWeb</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_nmap">
+       <attribute name="title">
+        <string>Nmap</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_nikto">
+       <attribute name="title">
+        <string>Nikto</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_joomscan">
+       <attribute name="title">
+        <string>JoomScan</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_wpscan">
+       <attribute name="title">
+        <string>WpScan</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_skipfish">
+       <attribute name="title">
+        <string>SkipFish</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_sqlmap">
+       <attribute name="title">
+        <string>SqlMap</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_slowloris">
+       <attribute name="title">
+        <string>SlowLoris</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_exploit">
+       <attribute name="title">
+        <string>Exploit</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_dork">
+       <attribute name="title">
+        <string>Dork</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>649</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionSocat"/>
+    <addaction name="actionTor"/>
+    <addaction name="actionWhatWeb"/>
+    <addaction name="actionNmap"/>
+    <addaction name="actionNikto"/>
+    <addaction name="actionJoomScan"/>
+    <addaction name="actionWpScan"/>
+    <addaction name="actionSkipFish"/>
+    <addaction name="actionSqlmap"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionAbout_Penmode"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_Phos"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+   </widget>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <action name="actionSocat">
+   <property name="text">
+    <string>Socat</string>
+   </property>
+  </action>
+  <action name="actionTor">
+   <property name="text">
+    <string>Tor</string>
+   </property>
+  </action>
+  <action name="actionWhatWeb">
+   <property name="text">
+    <string>WhatWeb</string>
+   </property>
+  </action>
+  <action name="actionNmap">
+   <property name="text">
+    <string>Nmap</string>
+   </property>
+  </action>
+  <action name="actionNikto">
+   <property name="text">
+    <string>Nikto</string>
+   </property>
+  </action>
+  <action name="actionJoomScan">
+   <property name="text">
+    <string>JoomScan</string>
+   </property>
+  </action>
+  <action name="actionWpScan">
+   <property name="text">
+    <string>WpScan</string>
+   </property>
+  </action>
+  <action name="actionSkipFish">
+   <property name="text">
+    <string>SkipFish</string>
+   </property>
+  </action>
+  <action name="actionSqlmap">
+   <property name="text">
+    <string>Sqlmap</string>
+   </property>
+  </action>
+  <action name="actionAbout_Penmode">
+   <property name="text">
+    <string>About Penmode</string>
+   </property>
+  </action>
+  <action name="actionAbout_Phos">
+   <property name="text">
+    <string>About Phos</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
