@@ -29,7 +29,7 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_whatweb">
          <attribute name="title">
@@ -525,7 +525,7 @@
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="1">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="pushSocat">
         <property name="text">
          <string>Enable</string>
         </property>
@@ -546,7 +546,7 @@
        </widget>
       </item>
       <item row="0" column="3">
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="pushTor">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -555,7 +555,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="4">
+      <item row="0" column="5">
        <spacer name="horizontalSpacer_9">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -567,6 +567,13 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="labelResolve">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

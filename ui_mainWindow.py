@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/mainWindow.ui'
 #
-# Created: Thu Apr 25 00:13:16 2013
+# Created: Thu Apr 25 00:50:28 2013
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -278,21 +278,25 @@ class Ui_MainWindow(object):
         self.gridLayout.addLayout(self.verticalLayout_2, 1, 0, 1, 1)
         self.gridLayout_2 = QtGui.QGridLayout()
         self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
-        self.pushButton = QtGui.QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(_fromUtf8("pushButton"))
-        self.gridLayout_2.addWidget(self.pushButton, 0, 1, 1, 1)
+        self.pushSocat = QtGui.QPushButton(self.centralwidget)
+        self.pushSocat.setObjectName(_fromUtf8("pushSocat"))
+        self.gridLayout_2.addWidget(self.pushSocat, 0, 1, 1, 1)
         self.label = QtGui.QLabel(self.centralwidget)
         self.label.setObjectName(_fromUtf8("label"))
         self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
         self.label_2 = QtGui.QLabel(self.centralwidget)
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.gridLayout_2.addWidget(self.label_2, 0, 2, 1, 1)
-        self.pushButton_2 = QtGui.QPushButton(self.centralwidget)
-        self.pushButton_2.setEnabled(True)
-        self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
-        self.gridLayout_2.addWidget(self.pushButton_2, 0, 3, 1, 1)
+        self.pushTor = QtGui.QPushButton(self.centralwidget)
+        self.pushTor.setEnabled(True)
+        self.pushTor.setObjectName(_fromUtf8("pushTor"))
+        self.gridLayout_2.addWidget(self.pushTor, 0, 3, 1, 1)
         spacerItem8 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.gridLayout_2.addItem(spacerItem8, 0, 4, 1, 1)
+        self.gridLayout_2.addItem(spacerItem8, 0, 5, 1, 1)
+        self.labelResolve = QtGui.QLabel(self.centralwidget)
+        self.labelResolve.setText(_fromUtf8(""))
+        self.labelResolve.setObjectName(_fromUtf8("labelResolve"))
+        self.gridLayout_2.addWidget(self.labelResolve, 0, 4, 1, 1)
         self.gridLayout.addLayout(self.gridLayout_2, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
@@ -344,7 +348,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(5)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -377,10 +381,10 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_slowloris), _translate("MainWindow", "SlowLoris", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_exploit), _translate("MainWindow", "Exploit", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_dork), _translate("MainWindow", "Dork", None))
-        self.pushButton.setText(_translate("MainWindow", "Enable", None))
+        self.pushSocat.setText(_translate("MainWindow", "Enable", None))
         self.label.setText(_translate("MainWindow", "Socat", None))
         self.label_2.setText(_translate("MainWindow", "Tor", None))
-        self.pushButton_2.setText(_translate("MainWindow", "Enable", None))
+        self.pushTor.setText(_translate("MainWindow", "Enable", None))
         self.menuHelp.setTitle(_translate("MainWindow", "Help", None))
         self.menuAbout.setTitle(_translate("MainWindow", "About", None))
         self.menuSettings.setTitle(_translate("MainWindow", "Settings", None))
