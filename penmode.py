@@ -38,6 +38,14 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
         self.ui.shellSlowLoris.setReadOnly(True)
         #Slot
         self.ui.pushSocat.clicked.connect(self.startStopSocat)
+        self.ui.pushTor.clicked.connect(self.startStopTor)
+        
+        if self.checkSocat() == 1:
+            self.ui.pushSocat.setText('Enabled')
+            
+        if self.checkTor() == 1:
+            self.ui.pushTor.setText('Enabled')
+            
         signal.signal(signal.SIGINT, signal.SIG_DFL)
         self.show()
 
@@ -51,12 +59,26 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
     
     def startStopSocat(self):
         if self.checkSocat() == 1:
-            print(1)
             Popen('killall socat', shell=True, stdout=PIPE)
             self.ui.pushSocat.setText('Enable')
         else:
-            print(2)
             Popen('socat TCP4-LISTEN:8080,fork SOCKS4a:127.0.0.1:$ip,socksport=9050 &', shell=True, stdout=PIPE)
+            self.ui.pushSocat.setText('Disable')
+            
+    def checkTor(self):
+        stdout = Popen('ps aux | grep torrc | grep -v grep', shell=True, stdout=PIPE).stdout
+        stdout = str(stdout.read()).replace("b''",'')
+        if stdout != '':
+            return 1
+        else:
+            return 0
+    
+    def startStopTor(self):
+        if self.checkTor() == 1:
+            Popen('su-to-root -X -c /etc/init.d/tor stop', shell=True, stdout=PIPE)
+            self.ui.pushSocat.setText('Enable')
+        else:
+            Popen('su-to-root -X -c /etc/init.d/tor start', shell=True, stdout=PIPE)
             self.ui.pushSocat.setText('Disable')
 
 def main():
