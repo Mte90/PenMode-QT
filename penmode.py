@@ -17,6 +17,15 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi( self )
         self.setWindowTitle('PenMode-QT - ' + self.version)
+        self.shell_color = 'QTextEdit { background-color: black; color:#18F018; }'
+        self.ui.shellWhatWeb.setStyleSheet(self.shell_color)
+        self.ui.shellNmap.setStyleSheet(self.shell_color)
+        self.ui.shellNikto.setStyleSheet(self.shell_color)
+        self.ui.shellJoomScan.setStyleSheet(self.shell_color)
+        self.ui.shellWpScan.setStyleSheet(self.shell_color)
+        self.ui.shellSkipFish.setStyleSheet(self.shell_color)
+        self.ui.shellSqlmap.setStyleSheet(self.shell_color)
+        self.ui.shellSlowLoris.setStyleSheet(self.shell_color)
         signal.signal(signal.SIGINT, signal.SIG_DFL)
         self.show()
 
