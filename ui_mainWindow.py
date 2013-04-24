@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/mainWindow.ui'
 #
-# Created: Wed Apr 24 22:37:07 2013
+# Created: Wed Apr 24 23:13:39 2013
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,7 +26,7 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(594, 437)
+        MainWindow.resize(649, 336)
         MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
@@ -44,6 +44,7 @@ class Ui_MainWindow(object):
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.gridLayout_2.addWidget(self.label_2, 0, 2, 1, 1)
         self.pushButton_2 = QtGui.QPushButton(self.centralwidget)
+        self.pushButton_2.setEnabled(True)
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.gridLayout_2.addWidget(self.pushButton_2, 0, 3, 1, 1)
         self.gridLayout.addLayout(self.gridLayout_2, 0, 0, 1, 1)
@@ -75,6 +76,27 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_whatweb, _fromUtf8(""))
         self.tab_nmap = QtGui.QWidget()
         self.tab_nmap.setObjectName(_fromUtf8("tab_nmap"))
+        self.gridLayout_8 = QtGui.QGridLayout(self.tab_nmap)
+        self.gridLayout_8.setObjectName(_fromUtf8("gridLayout_8"))
+        self.gridLayout_6 = QtGui.QGridLayout()
+        self.gridLayout_6.setObjectName(_fromUtf8("gridLayout_6"))
+        self.label_4 = QtGui.QLabel(self.tab_nmap)
+        self.label_4.setObjectName(_fromUtf8("label_4"))
+        self.gridLayout_6.addWidget(self.label_4, 0, 0, 1, 1)
+        self.nmapTarget = QtGui.QLineEdit(self.tab_nmap)
+        self.nmapTarget.setObjectName(_fromUtf8("nmapTarget"))
+        self.gridLayout_6.addWidget(self.nmapTarget, 0, 1, 1, 1)
+        self.gridLayout_7 = QtGui.QGridLayout()
+        self.gridLayout_7.setObjectName(_fromUtf8("gridLayout_7"))
+        spacerItem2 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.gridLayout_7.addItem(spacerItem2, 0, 1, 1, 1)
+        self.pushStartNmap = QtGui.QPushButton(self.tab_nmap)
+        self.pushStartNmap.setObjectName(_fromUtf8("pushStartNmap"))
+        self.gridLayout_7.addWidget(self.pushStartNmap, 0, 0, 1, 1)
+        spacerItem3 = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout_7.addItem(spacerItem3, 1, 1, 1, 1)
+        self.gridLayout_6.addLayout(self.gridLayout_7, 1, 1, 1, 1)
+        self.gridLayout_8.addLayout(self.gridLayout_6, 0, 0, 1, 1)
         self.tabWidget.addTab(self.tab_nmap, _fromUtf8(""))
         self.tab_nikto = QtGui.QWidget()
         self.tab_nikto.setObjectName(_fromUtf8("tab_nikto"))
@@ -103,7 +125,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.tabWidget, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 594, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 649, 22))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         self.menuHelp = QtGui.QMenu(self.menubar)
         self.menuHelp.setObjectName(_fromUtf8("menuHelp"))
@@ -151,7 +173,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -163,6 +185,8 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Target", None))
         self.pushStartWhatWeb.setText(_translate("MainWindow", "Start", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_whatweb), _translate("MainWindow", "WhatWeb", None))
+        self.label_4.setText(_translate("MainWindow", "Target", None))
+        self.pushStartNmap.setText(_translate("MainWindow", "Start", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_nmap), _translate("MainWindow", "Nmap", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_nikto), _translate("MainWindow", "Nikto", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_joomscan), _translate("MainWindow", "JoomScan", None))
