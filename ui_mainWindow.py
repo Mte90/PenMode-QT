@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/mainWindow.ui'
 #
-# Created: Wed Apr 24 01:06:09 2013
+# Created: Wed Apr 24 22:37:07 2013
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,7 +26,7 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(649, 480)
+        MainWindow.resize(594, 437)
         MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
@@ -51,6 +51,27 @@ class Ui_MainWindow(object):
         self.tabWidget.setObjectName(_fromUtf8("tabWidget"))
         self.tab_whatweb = QtGui.QWidget()
         self.tab_whatweb.setObjectName(_fromUtf8("tab_whatweb"))
+        self.gridLayout_4 = QtGui.QGridLayout(self.tab_whatweb)
+        self.gridLayout_4.setObjectName(_fromUtf8("gridLayout_4"))
+        self.gridLayout_3 = QtGui.QGridLayout()
+        self.gridLayout_3.setObjectName(_fromUtf8("gridLayout_3"))
+        self.label_3 = QtGui.QLabel(self.tab_whatweb)
+        self.label_3.setObjectName(_fromUtf8("label_3"))
+        self.gridLayout_3.addWidget(self.label_3, 0, 0, 1, 1)
+        self.whatwebTarget = QtGui.QLineEdit(self.tab_whatweb)
+        self.whatwebTarget.setObjectName(_fromUtf8("whatwebTarget"))
+        self.gridLayout_3.addWidget(self.whatwebTarget, 0, 1, 1, 1)
+        self.gridLayout_5 = QtGui.QGridLayout()
+        self.gridLayout_5.setObjectName(_fromUtf8("gridLayout_5"))
+        spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.gridLayout_5.addItem(spacerItem, 0, 1, 1, 1)
+        self.pushStartWhatWeb = QtGui.QPushButton(self.tab_whatweb)
+        self.pushStartWhatWeb.setObjectName(_fromUtf8("pushStartWhatWeb"))
+        self.gridLayout_5.addWidget(self.pushStartWhatWeb, 0, 0, 1, 1)
+        spacerItem1 = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.gridLayout_5.addItem(spacerItem1, 1, 1, 1, 1)
+        self.gridLayout_3.addLayout(self.gridLayout_5, 1, 1, 1, 1)
+        self.gridLayout_4.addLayout(self.gridLayout_3, 0, 0, 1, 1)
         self.tabWidget.addTab(self.tab_whatweb, _fromUtf8(""))
         self.tab_nmap = QtGui.QWidget()
         self.tab_nmap.setObjectName(_fromUtf8("tab_nmap"))
@@ -82,7 +103,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.tabWidget, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 649, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 594, 22))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         self.menuHelp = QtGui.QMenu(self.menubar)
         self.menuHelp.setObjectName(_fromUtf8("menuHelp"))
@@ -130,7 +151,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(9)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -139,6 +160,8 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "Socat", None))
         self.label_2.setText(_translate("MainWindow", "Tor", None))
         self.pushButton_2.setText(_translate("MainWindow", "Enable", None))
+        self.label_3.setText(_translate("MainWindow", "Target", None))
+        self.pushStartWhatWeb.setText(_translate("MainWindow", "Start", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_whatweb), _translate("MainWindow", "WhatWeb", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_nmap), _translate("MainWindow", "Nmap", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_nikto), _translate("MainWindow", "Nikto", None))
