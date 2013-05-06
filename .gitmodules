@@ -1,0 +1,3 @@
+[submodule "pencore"]
+	path = pencore
+	url = https://github.com/n0pe/pencore.py
