@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
-import os,sys,signal,re
+import os,sys,signal
 from subprocess import Popen, PIPE
 
 from pencore.pencore import penmode
@@ -55,10 +55,6 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		signal.signal(signal.SIGINT, signal.SIG_DFL)
 		self.show()
 	
-	def closeEvent(self):
-		self.checkSocat = 1
-		self.startStopSocat()
-	
 	def showTerminal(self,cmd,area):
 		area.append(cmd)
 		p = Popen(cmd + ' | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"', shell=True, stdout=PIPE).stdout
@@ -94,8 +90,19 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.ui.pushSocat.setText('Disable')
 			
 	def whatWeb(self):
-		self.pencore.set_target(self.ui.whatwebTarget.text())
-		self.showTerminal(self.pencore.whatweb(),self.ui.shellWhatWeb)
+		if self.checkTarget(self.ui.whatwebTarget.text()):
+			self.showTerminal(self.pencore.whatweb(),self.ui.shellWhatWeb)
+	
+	def checkTarget(self,target):
+		if not target:
+			QMessageBox.critical(self, "Error", "You have not inserted a target!")
+			return False
+		else:
+			if target[0:7] != "http://":
+				target = "http://" + target
+			self.pencore.set_target(target)
+			return True
+		
 
 def main():
 	app = QApplication(sys.argv)
