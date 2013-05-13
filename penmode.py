@@ -41,6 +41,12 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.pushSocat.clicked.connect(self.startStopSocat)
 		self.ui.pushTor.clicked.connect(self.startStopTor)
 		self.ui.pushStartWhatWeb.clicked.connect(self.whatWeb)
+		self.ui.pushStartNmap.clicked.connect(self.nmap)
+		self.ui.pushStartNikto.clicked.connect(self.nikto)
+		self.ui.pushStartJoomScan.clicked.connect(self.joomScan)
+		self.ui.pushStartWpScan.clicked.connect(self.wpScan)
+		self.ui.pushStartSkipFish.clicked.connect(self.skipFish)
+		self.ui.pushStartSqlMap.clicked.connect(self.sqlMap)
 
 		#load pencore
 		self.pencore = penmode()
@@ -89,9 +95,6 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			Popen('su-to-root -X -c /etc/init.d/tor start', shell=True, stdout=PIPE)
 			self.ui.pushSocat.setText('Disable')
 			
-	def whatWeb(self):
-		if self.checkTarget(self.ui.whatwebTarget.text()):
-			self.showTerminal(self.pencore.whatweb(),self.ui.shellWhatWeb)
 	
 	def checkTarget(self,target):
 		if not target:
@@ -102,8 +105,35 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 				target = "http://" + target
 			self.pencore.set_target(target)
 			return True
-		
 
+	def whatWeb(self):
+		if self.checkTarget(self.ui.whatwebTarget.text()):
+			self.showTerminal(self.pencore.whatweb(),self.ui.shellWhatWeb)
+	
+	def nmap(self):
+		if self.checkTarget(self.ui.nmapTarget.text()):
+			self.showTerminal(self.pencore.nmap(),self.ui.shellNmap)
+	
+	def nikto(self):
+		if self.checkTarget(self.ui.niktoTarget.text()):
+			self.showTerminal(self.pencore.nikto(),self.ui.shellNikto)
+
+	def joomScan(self):
+		if self.checkTarget(self.ui.joomscanTarget.text()):
+			self.showTerminal(self.pencore.joomscan(),self.ui.shellJoomScan)
+			
+	def wpScan(self):
+		if self.checkTarget(self.ui.wpscanTarget.text()):
+			self.showTerminal(self.pencore.wpscan(),self.ui.shellWpScan)
+
+	def skipFish(self):
+		if self.checkTarget(self.ui.skipfishTarget.text()):
+			self.showTerminal(self.pencore.skipfish(),self.ui.shellSkipFish)
+			
+	def sqlMap(self):
+		if self.checkTarget(self.ui.sqlmapTarget.text()):
+			self.showTerminal(self.pencore.sqlmap(),self.ui.shellSqlMap)
+			
 def main():
 	app = QApplication(sys.argv)
 	MainWindow_ = QMainWindow()
