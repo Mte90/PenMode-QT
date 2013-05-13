@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/mainWindow.ui'
 #
-# Created: Thu Apr 25 00:50:28 2013
+# Created: Tue May 14 00:13:31 2013
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -103,10 +103,10 @@ class Ui_MainWindow(object):
         self.label_5 = QtGui.QLabel(self.tab_nikto)
         self.label_5.setObjectName(_fromUtf8("label_5"))
         self.gridLayout_9.addWidget(self.label_5, 0, 0, 1, 1)
-        self.whatwebTarget_2 = QtGui.QLineEdit(self.tab_nikto)
-        self.whatwebTarget_2.setAcceptDrops(False)
-        self.whatwebTarget_2.setObjectName(_fromUtf8("whatwebTarget_2"))
-        self.gridLayout_9.addWidget(self.whatwebTarget_2, 0, 1, 1, 1)
+        self.niktoTarget = QtGui.QLineEdit(self.tab_nikto)
+        self.niktoTarget.setAcceptDrops(False)
+        self.niktoTarget.setObjectName(_fromUtf8("niktoTarget"))
+        self.gridLayout_9.addWidget(self.niktoTarget, 0, 1, 1, 1)
         self.gridLayout_10 = QtGui.QGridLayout()
         self.gridLayout_10.setObjectName(_fromUtf8("gridLayout_10"))
         self.pushStartNikto = QtGui.QPushButton(self.tab_nikto)
