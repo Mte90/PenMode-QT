@@ -51,6 +51,16 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		#load pencore
 		self.pencore = penmode()
 		self.pencore.set_gui(1)
+		self.pencore.get_params()
+		
+		if self.pencore.get_target():
+			self.ui.whatwebTarget.setText(self.pencore.get_target())
+			self.ui.nmapTarget.setText(self.pencore.get_target())
+			self.ui.niktoTarget.setText(self.pencore.get_target())
+			self.ui.joomscanTarget.setText(self.pencore.get_target())
+			self.ui.wpscanTarget.setText(self.pencore.get_target())
+			self.ui.skipfishTarget.setText(self.pencore.get_target())
+			self.ui.sqlmapTarget.setText(self.pencore.get_target())
 		
 		if self.checkSocat() == 1:
 			self.ui.pushSocat.setText('Enabled')
