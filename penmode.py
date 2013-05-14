@@ -54,13 +54,15 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.pencore.get_params()
 		
 		if self.pencore.get_target():
-			self.ui.whatwebTarget.setText(self.pencore.get_target())
-			self.ui.nmapTarget.setText(self.pencore.get_target())
-			self.ui.niktoTarget.setText(self.pencore.get_target())
-			self.ui.joomscanTarget.setText(self.pencore.get_target())
-			self.ui.wpscanTarget.setText(self.pencore.get_target())
-			self.ui.skipfishTarget.setText(self.pencore.get_target())
-			self.ui.sqlmapTarget.setText(self.pencore.get_target())
+			target = self.pencore.get_target()
+			target = target.replace('\\n\'','')
+			self.ui.whatwebTarget.setText(target)
+			self.ui.nmapTarget.setText(target)
+			self.ui.niktoTarget.setText(target)
+			self.ui.joomscanTarget.setText(target)
+			self.ui.wpscanTarget.setText(target)
+			self.ui.skipfishTarget.setText(target)
+			self.ui.sqlmapTarget.setText(target)
 		
 		if self.checkTor() == 1:
 			self.ui.pushTor.setText('Disable')
@@ -106,7 +108,6 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.pencore.start_tor()
 			self.ui.pushTor.setText('Disable')
 			
-	
 	def checkTarget(self,target):
 		if not target:
 			QMessageBox.critical(self, "Error", "You have not inserted a target!")
