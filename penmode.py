@@ -53,7 +53,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.pencore.set_gui(1)
 		self.pencore.get_params()
 		
-		if self.pencore.get_target():
+		if self.pencore.get_target() != None:
 			target = self.pencore.get_target()
 			target = target.replace('\\n\'','')
 			self.ui.whatwebTarget.setText(target)
@@ -64,6 +64,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.ui.skipfishTarget.setText(target)
 			self.ui.sqlmapTarget.setText(target)
 		
+		
 		if self.checkTor() == 1:
 			self.ui.pushTor.setText('Disable')
 		else:
@@ -73,8 +74,6 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.show()
 	
 	def showTerminal(self,cmd,area):
-		self.startStopSocat()
-		self.startStopTor()
 		p = Popen(cmd + ' | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"', shell=True, stdout=PIPE).stdout
 		stdout = ''
 		while True:
@@ -109,12 +108,12 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.ui.pushTor.setText('Disable')
 			
 	def checkTarget(self,target):
+		if self.checkTor() == 0:
+			self.startStopTor()
 		if not target:
 			QMessageBox.critical(self, "Error", "You have not inserted a target!")
 			return False
 		else:
-			if target[0:7] != "http://":
-				target = "http://" + target
 			self.pencore.set_target(target)
 			return True
 
