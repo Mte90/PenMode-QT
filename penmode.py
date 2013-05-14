@@ -64,16 +64,18 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.ui.skipfishTarget.setText(target)
 			self.ui.sqlmapTarget.setText(target)
 		
-		
 		if self.checkTor() == 1:
 			self.ui.pushTor.setText('Disable')
 		else:
 			self.startStopTor()
-		
+			
+		if self.checkSocat() == 1:
+			Popen('killall socat', shell=True, stdout=PIPE)
 		signal.signal(signal.SIGINT, signal.SIG_DFL)
 		self.show()
 	
 	def showTerminal(self,cmd,area):
+		self.startSocat()
 		p = Popen(cmd + ' | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"', shell=True, stdout=PIPE).stdout
 		stdout = ''
 		while True:
@@ -87,6 +89,11 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 	def checkSocat(self):
 		return self.pencore.check_socat()
 	
+	def startSocat(self):
+		Popen('killall socat', shell=True, stdout=PIPE)
+		self.pencore.start_socat()
+		self.ui.pushSocat.setText('Disable')
+				
 	def startStopSocat(self):
 		if self.pencore.get_target() != None:
 			if self.checkSocat() == 1:
