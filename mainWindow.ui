@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>651</width>
-    <height>368</height>
+    <height>433</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,21 +38,7 @@
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="0" column="0">
            <layout class="QGridLayout" name="gridLayout_3">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_3">
-              <property name="text">
-               <string>Target</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QLineEdit" name="whatwebTarget">
-              <property name="acceptDrops">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
+            <item row="2" column="1">
              <layout class="QGridLayout" name="gridLayout_5">
               <item row="0" column="1">
                <spacer name="horizontalSpacer">
@@ -76,9 +62,33 @@
               </item>
              </layout>
             </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Target</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="whatwebTarget">
+              <property name="acceptDrops">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>Parameter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="whatwebParameter"/>
+            </item>
            </layout>
           </item>
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="QTextEdit" name="shellWhatWeb">
             <property name="enabled">
              <bool>true</bool>
@@ -103,13 +113,6 @@
          <layout class="QGridLayout" name="gridLayout_8">
           <item row="0" column="0">
            <layout class="QGridLayout" name="gridLayout_6">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_4">
-              <property name="text">
-               <string>Target</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
              <widget class="QLineEdit" name="nmapTarget">
               <property name="acceptDrops">
@@ -117,7 +120,14 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Target</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
              <layout class="QGridLayout" name="gridLayout_7">
               <item row="0" column="1">
                <spacer name="horizontalSpacer_2">
@@ -140,6 +150,16 @@
                </widget>
               </item>
              </layout>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>Parameter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="nmapParameter"/>
             </item>
            </layout>
           </item>
@@ -166,14 +186,7 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="1">
-             <widget class="QLineEdit" name="niktoTarget">
-              <property name="acceptDrops">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
+            <item row="2" column="1">
              <layout class="QGridLayout" name="gridLayout_10">
               <item row="0" column="0">
                <widget class="QPushButton" name="pushStartNikto">
@@ -197,6 +210,23 @@
               </item>
              </layout>
             </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="niktoTarget">
+              <property name="acceptDrops">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>Parameter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="niktoParameter"/>
+            </item>
            </layout>
           </item>
           <item row="1" column="0">
@@ -215,13 +245,6 @@
          <layout class="QGridLayout" name="gridLayout_17">
           <item row="0" column="0">
            <layout class="QGridLayout" name="gridLayout_15">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_9">
-              <property name="text">
-               <string>Target</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
              <widget class="QLineEdit" name="joomscanTarget">
               <property name="acceptDrops">
@@ -229,7 +252,7 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
+            <item row="2" column="1">
              <layout class="QGridLayout" name="gridLayout_16">
               <item row="0" column="0">
                <widget class="QPushButton" name="pushStartJoomScan">
@@ -252,6 +275,23 @@
                </spacer>
               </item>
              </layout>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Target</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>Parameter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="joomscanParameter"/>
             </item>
            </layout>
           </item>
@@ -278,14 +318,7 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="1">
-             <widget class="QLineEdit" name="wpscanTarget">
-              <property name="acceptDrops">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
+            <item row="2" column="1">
              <layout class="QGridLayout" name="gridLayout_19">
               <item row="0" column="1">
                <spacer name="horizontalSpacer_6">
@@ -309,6 +342,23 @@
               </item>
              </layout>
             </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="wpscanTarget">
+              <property name="acceptDrops">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>Parameter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="wpscanParameter"/>
+            </item>
            </layout>
           </item>
           <item row="1" column="0">
@@ -327,13 +377,6 @@
          <layout class="QGridLayout" name="gridLayout_23">
           <item row="0" column="0">
            <layout class="QGridLayout" name="gridLayout_21">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_11">
-              <property name="text">
-               <string>Target</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
              <widget class="QLineEdit" name="skipfishTarget">
               <property name="acceptDrops">
@@ -341,7 +384,14 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>Target</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
              <layout class="QGridLayout" name="gridLayout_22">
               <item row="0" column="1">
                <spacer name="horizontalSpacer_7">
@@ -365,6 +415,16 @@
               </item>
              </layout>
             </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_18">
+              <property name="text">
+               <string>Parameter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="skipfishParameter"/>
+            </item>
            </layout>
           </item>
           <item row="1" column="0">
@@ -383,13 +443,6 @@
          <layout class="QGridLayout" name="gridLayout_26">
           <item row="0" column="0">
            <layout class="QGridLayout" name="gridLayout_24">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_12">
-              <property name="text">
-               <string>Target</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="1">
              <widget class="QLineEdit" name="sqlmapTarget">
               <property name="acceptDrops">
@@ -397,7 +450,14 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>Target</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
              <layout class="QGridLayout" name="gridLayout_25">
               <item row="0" column="1">
                <spacer name="horizontalSpacer_8">
@@ -421,6 +481,16 @@
               </item>
              </layout>
             </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_19">
+              <property name="text">
+               <string>Parameter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="sqlmapParameter"/>
+            </item>
            </layout>
           </item>
           <item row="1" column="0">
@@ -439,12 +509,8 @@
          <layout class="QGridLayout" name="gridLayout_14">
           <item row="0" column="0">
            <layout class="QGridLayout" name="gridLayout_12">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_6">
-              <property name="text">
-               <string>Target</string>
-              </property>
-             </widget>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="spinRequest"/>
             </item>
             <item row="0" column="1">
              <widget class="QLineEdit" name="slowlorisTarget">
@@ -453,7 +519,10 @@
               </property>
              </widget>
             </item>
-            <item row="3" column="1">
+            <item row="2" column="1">
+             <widget class="QSpinBox" name="spinTimeout"/>
+            </item>
+            <item row="4" column="1">
              <layout class="QGridLayout" name="gridLayout_13">
               <item row="0" column="1">
                <spacer name="horizontalSpacer_4">
@@ -477,13 +546,6 @@
               </item>
              </layout>
             </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_7">
-              <property name="text">
-               <string>Requests Number</string>
-              </property>
-             </widget>
-            </item>
             <item row="2" column="0">
              <widget class="QLabel" name="label_8">
               <property name="text">
@@ -491,11 +553,29 @@
               </property>
              </widget>
             </item>
-            <item row="2" column="1">
-             <widget class="QSpinBox" name="spinTimeout"/>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Target</string>
+              </property>
+             </widget>
             </item>
-            <item row="1" column="1">
-             <widget class="QSpinBox" name="spinRequest"/>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Requests Number</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>Parameter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="slowlorisParameter"/>
             </item>
            </layout>
           </item>
@@ -671,7 +751,7 @@
   </action>
   <action name="actionAbout_Phos">
    <property name="text">
-    <string>About Phos</string>
+    <string>About Ph#os</string>
    </property>
   </action>
  </widget>
