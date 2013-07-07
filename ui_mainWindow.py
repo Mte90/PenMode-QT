@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/mainWindow.ui'
 #
-# Created: Sun Jun 23 22:30:58 2013
+# Created: Sun Jul  7 17:45:17 2013
 #      by: PyQt4 UI code generator 4.10.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -379,6 +379,8 @@ class Ui_MainWindow(object):
         self.actionAbout_Penmode.setObjectName(_fromUtf8("actionAbout_Penmode"))
         self.actionAbout_Phos = QtGui.QAction(MainWindow)
         self.actionAbout_Phos.setObjectName(_fromUtf8("actionAbout_Phos"))
+        self.actionSettings = QtGui.QAction(MainWindow)
+        self.actionSettings.setObjectName(_fromUtf8("actionSettings"))
         self.menuHelp.addAction(self.actionSocat)
         self.menuHelp.addAction(self.actionTor)
         self.menuHelp.addAction(self.actionWhatWeb)
@@ -391,6 +393,7 @@ class Ui_MainWindow(object):
         self.menuAbout.addAction(self.actionAbout_Penmode)
         self.menuAbout.addSeparator()
         self.menuAbout.addAction(self.actionAbout_Phos)
+        self.menuSettings.addAction(self.actionSettings)
         self.menubar.addAction(self.menuSettings.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
@@ -455,4 +458,5 @@ class Ui_MainWindow(object):
         self.actionSqlmap.setText(_translate("MainWindow", "Sqlmap", None))
         self.actionAbout_Penmode.setText(_translate("MainWindow", "About Penmode", None))
         self.actionAbout_Phos.setText(_translate("MainWindow", "About Ph#os", None))
+        self.actionSettings.setText(_translate("MainWindow", "Settings", None))
 
