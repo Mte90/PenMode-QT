@@ -15,6 +15,81 @@ class settingsDialog ( QDialog , Ui_settingsDialog):
 		QDialog.__init__( self, parent )
 		self.ui = Ui_settingsDialog()
 		self.ui.setupUi( self )
+		self.ui.pushSaveSettings.clicked.connect(self.saveSettings)
+		
+		# Load settings
+		if self.settings.value('whatweb_history') == 'True':
+			self.ui.whatwebHistory.setChecked(True)
+		
+		if self.settings.value('nmap_history') == 'True':
+			self.ui.nmapHistory.setChecked(True)
+		
+		if self.settings.value('nikto_history') == 'True':
+			self.ui.niktoHistory.setChecked(True)
+		
+		if self.settings.value('joomscan_history') == 'True':
+			self.ui.joomscanHistory.setChecked(True)
+		
+		if self.settings.value('wpscan_history') == 'True':
+			self.ui.wpscanHistory.setChecked(True)
+		
+		if self.settings.value('skipfish_history') == 'True':
+			self.ui.skipfishHistory.setChecked(True)
+		
+		if self.settings.value('sqlmap_history') == 'True':
+			self.ui.sqlmapHistory.setChecked(True)
+		
+		if self.settings.value('slowloris_history') == 'True':
+			self.ui.slowlorisHistory.setChecked(True)
+		
+		if self.settings.value('parameter_field') == 'True':
+			self.ui.enableAdvanced.setChecked(True)
 
-		signal.signal(signal.SIGINT, signal.SIG_DFL)
-		self.show()
+	def saveSettings(self):
+		# Tool history
+		if self.ui.whatwebHistory.isChecked():
+			self.settings.setValue('whatweb_history','True')
+		else:
+			self.settings.setValue('whatweb_history','False')
+			
+		if self.ui.nmapHistory.isChecked():
+			self.settings.setValue('nmap_history','True')
+		else:
+			self.settings.setValue('nmap_history','False')
+			
+		if self.ui.niktoHistory.isChecked():
+			self.settings.setValue('nikto_history','True')
+		else:
+			self.settings.setValue('nikto_history','False')
+			
+		if self.ui.joomscanHistory.isChecked():
+			self.settings.setValue('joomscan_history','True')
+		else:
+			self.settings.setValue('joomscan_history','False')
+		
+		if self.ui.wpscanHistory.isChecked():
+			self.settings.setValue('wpscan_history','True')
+		else:
+			self.settings.setValue('wpscan_history','False')
+		
+		if self.ui.skipfishHistory.isChecked():
+			self.settings.setValue('skipfish_history','True')
+		else:
+			self.settings.setValue('skipfish_history','False')
+		
+		if self.ui.sqlmapHistory.isChecked():
+			self.settings.setValue('sqlmap_history','True')
+		else:
+			self.settings.setValue('sqlmap_history','False')
+		
+		if self.ui.slowlorisHistory.isChecked():
+			self.settings.setValue('slowloris_history','True')
+		else:
+			self.settings.setValue('slowloris_history','False')
+		
+		# Enable parameter field
+		if self.ui.enableAdvanced.isChecked():
+			self.settings.setValue('parameter_field','True')
+		else:
+			self.settings.setValue('enableAdvanced','False')
+		

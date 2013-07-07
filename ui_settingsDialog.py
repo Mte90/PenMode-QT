@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/settingsDialog.ui'
 #
-# Created: Sun Jul  7 21:30:27 2013
+# Created: Sun Jul  7 21:35:34 2013
 #      by: PyQt4 UI code generator 4.10.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -48,9 +48,9 @@ class Ui_settingsDialog(object):
         self.niktoHistory = QtGui.QCheckBox(self.GroupBox)
         self.niktoHistory.setObjectName(_fromUtf8("niktoHistory"))
         self.gridLayout_3.addWidget(self.niktoHistory, 1, 0, 1, 1)
-        self.whatwebHisory = QtGui.QCheckBox(self.GroupBox)
-        self.whatwebHisory.setObjectName(_fromUtf8("whatwebHisory"))
-        self.gridLayout_3.addWidget(self.whatwebHisory, 0, 0, 1, 1)
+        self.whatwebHistory = QtGui.QCheckBox(self.GroupBox)
+        self.whatwebHistory.setObjectName(_fromUtf8("whatwebHistory"))
+        self.gridLayout_3.addWidget(self.whatwebHistory, 0, 0, 1, 1)
         self.wpscanHistory = QtGui.QCheckBox(self.GroupBox)
         self.wpscanHistory.setObjectName(_fromUtf8("wpscanHistory"))
         self.gridLayout_3.addWidget(self.wpscanHistory, 2, 0, 1, 1)
@@ -86,7 +86,7 @@ class Ui_settingsDialog(object):
         self.GroupBox.setTitle(_translate("settingsDialog", "History", None))
         self.nmapHistory.setText(_translate("settingsDialog", "Nmap", None))
         self.niktoHistory.setText(_translate("settingsDialog", "Nikto", None))
-        self.whatwebHisory.setText(_translate("settingsDialog", "WhatWeb", None))
+        self.whatwebHistory.setText(_translate("settingsDialog", "WhatWeb", None))
         self.wpscanHistory.setText(_translate("settingsDialog", "WpScan", None))
         self.skipfishHistory.setText(_translate("settingsDialog", "SkipFish", None))
         self.joomscanHistory.setText(_translate("settingsDialog", "JoomScan", None))
