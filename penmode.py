@@ -51,6 +51,25 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.pushStartSlowLoris.clicked.connect(self.slowLoris)
 		self.ui.actionSettings.triggered.connect(self.openSetting)
 		
+		#Check Field Parameter
+		if self.settings.value('parameter_field') == 'True':
+			self.ui.labelParameter_1.setEnabled(True)
+			self.ui.whatwebParameter.setEnabled(True)
+			self.ui.labelParameter_2.setEnabled(True)
+			self.ui.nmapParameter.setEnabled(True)
+			self.ui.labelParameter_3.setEnabled(True)
+			self.ui.niktoParameter.setEnabled(True)
+			self.ui.labelParameter_4.setEnabled(True)
+			self.ui.joomscanParameter.setEnabled(True)
+			self.ui.labelParameter_5.setEnabled(True)
+			self.ui.wpscanParameter.setEnabled(True)
+			self.ui.labelParameter_6.setEnabled(True)
+			self.ui.skipfishParameter.setEnabled(True)
+			self.ui.labelParameter_7.setEnabled(True)
+			self.ui.sqlmapParameter.setEnabled(True)
+			self.ui.labelParameter_8.setEnabled(True)
+			self.ui.slowlorisParameter.setEnabled(True)
+		
 		#load pencore
 		self.pencore = penmode()
 		self.pencore.set_gui(1)
@@ -85,11 +104,14 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		ui.exec_()
 
 	def showTerminal(self,cmd,area):
+		#Start Socat
 		self.startSocat()
+		#Pint the command in the console
 		print(cmd)
 		p = Popen(cmd + ' | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"', shell=True, stdout=PIPE).stdout
 		stdout = ''
 		while True:
+			#read every line of the tool
 			line = p.readline()
 			line2 = str(line).replace("b'",'').replace('\\n\'','').replace('\\t','')
 			stdout += line2

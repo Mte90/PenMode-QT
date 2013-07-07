@@ -91,5 +91,5 @@ class settingsDialog ( QDialog , Ui_settingsDialog):
 		if self.ui.enableAdvanced.isChecked():
 			self.settings.setValue('parameter_field','True')
 		else:
-			self.settings.setValue('enableAdvanced','False')
+			self.settings.setValue('parameter_field','False')
 		
