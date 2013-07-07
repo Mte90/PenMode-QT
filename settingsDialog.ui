@@ -98,7 +98,7 @@
             </item>
            </layout>
           </item>
-          <item row="3" column="0">
+          <item row="4" column="0">
            <widget class="QPushButton" name="resetHistory">
             <property name="text">
              <string>Reset History</string>
@@ -109,6 +109,19 @@
            <widget class="QCheckBox" name="historyAll">
             <property name="text">
              <string>History unique for all tool</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>This option require a restart of the software!</string>
             </property>
            </widget>
           </item>

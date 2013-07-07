@@ -26,6 +26,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 	history_target['skipfish'] = []
 	history_target['sqlmap'] = []
 	history_target['slowloris'] = []
+	history_target['all']  = []
 	
 	def __init__ ( self, parent = None ):
 		QMainWindow.__init__( self, parent )
@@ -72,6 +73,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.pencore.set_gui(1)
 		self.pencore.get_params()
 		
+		#Get the target by command line
 		if self.pencore.get_target() != None:
 			target = self.pencore.get_target()
 			target = target.replace('\\n\'','')
@@ -153,6 +155,29 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.history_target['skipfish'] = str(self.history.value('skipfish')).split(';')
 		self.history_target['sqlmap'] = str(self.history.value('sqlmap')).split(';')
 		self.history_target['slowloris'] = str(self.history.value('slowloris')).split(';')
+		if self.settings.value('all_history') == 'True':
+			self.history_target['all'] += self.history_target['whatweb'] + self.history_target['nmap']
+			self.history_target['all'] += self.history_target['nikto'] + self.history_target['joomscan']
+			self.history_target['all'] += self.history_target['wpscan'] + self.history_target['skipfish']
+			self.history_target['all'] += self.history_target['sqlmap'] + self.history_target['slowloris']
+			completer = QCompleter(self.history_target['all'])
+			self.ui.whatwebTarget.setCompleter(completer)
+			self.ui.nmapTarget.setCompleter(completer)
+			self.ui.niktoTarget.setCompleter(completer)
+			self.ui.joomscanTarget.setCompleter(completer)
+			self.ui.wpscanTarget.setCompleter(completer)
+			self.ui.skipfishTarget.setCompleter(completer)
+			self.ui.sqlmapTarget.setCompleter(completer)
+			self.ui.slowlorisTarget.setCompleter(completer)
+		else:
+			completer_whatweb = QCompleter(self.history_target['whatweb'],self.ui.whatwebTarget)
+			completer_nmap = QCompleter(self.history_target['nmap'],self.ui.nmapTarget)
+			completer_nikto = QCompleter(self.history_target['nikto'],self.ui.niktoTarget)
+			completer_joomscan = QCompleter(self.history_target['joomscan'],self.ui.joomscanTarget)
+			completer_wpscan = QCompleter(self.history_target['wpscan'],self.ui.wpscanTarget)
+			completer_skipfish = QCompleter(self.history_target['skipfish'],self.ui.skipfishTarget)
+			completer_sqlmap = QCompleter(self.history_target['sqlmap'],self.ui.sqlmapTarget)
+			completer_slowloris = QCompleter(self.history_target['slowloris'],self.ui.slowlorisTarget)
 	
 	def showTerminal(self,cmd,area):
 		#Start Socat

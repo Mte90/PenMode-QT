@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/settingsDialog.ui'
 #
-# Created: Sun Jul  7 22:41:34 2013
+# Created: Sun Jul  7 23:34:48 2013
 #      by: PyQt4 UI code generator 4.10.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -73,10 +73,14 @@ class Ui_settingsDialog(object):
         self.gridLayout_2.addLayout(self.gridLayout_3, 0, 0, 1, 1)
         self.resetHistory = QtGui.QPushButton(self.GroupBox)
         self.resetHistory.setObjectName(_fromUtf8("resetHistory"))
-        self.gridLayout_2.addWidget(self.resetHistory, 3, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.resetHistory, 4, 0, 1, 1)
         self.historyAll = QtGui.QCheckBox(self.GroupBox)
         self.historyAll.setObjectName(_fromUtf8("historyAll"))
         self.gridLayout_2.addWidget(self.historyAll, 2, 0, 1, 1)
+        self.label = QtGui.QLabel(self.GroupBox)
+        self.label.setMaximumSize(QtCore.QSize(16777215, 20))
+        self.label.setObjectName(_fromUtf8("label"))
+        self.gridLayout_2.addWidget(self.label, 3, 0, 1, 1)
         self.verticalLayout.addWidget(self.GroupBox)
         self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
         self.gridLayout_4.addLayout(self.gridLayout, 0, 0, 1, 1)
@@ -98,4 +102,5 @@ class Ui_settingsDialog(object):
         self.sqlmapHistory.setText(_translate("settingsDialog", "SqlMap", None))
         self.resetHistory.setText(_translate("settingsDialog", "Reset History", None))
         self.historyAll.setText(_translate("settingsDialog", "History unique for all tool", None))
+        self.label.setText(_translate("settingsDialog", "This option require a restart of the software!", None))
 
