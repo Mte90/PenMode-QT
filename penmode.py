@@ -68,6 +68,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.ui.wpscanTarget.setText(target)
 			self.ui.skipfishTarget.setText(target)
 			self.ui.sqlmapTarget.setText(target)
+			self.ui.slowlorisTarget.setText(target)
 		
 		if self.checkTor() == 1:
 			self.ui.pushTor.setText('Disable')
