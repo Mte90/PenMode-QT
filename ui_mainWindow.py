@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/mainWindow.ui'
 #
-# Created: Sun Jul  7 17:45:17 2013
+# Created: Sun Jul  7 21:21:50 2013
 #      by: PyQt4 UI code generator 4.10.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -278,6 +278,7 @@ class Ui_MainWindow(object):
         self.gridLayout_12 = QtGui.QGridLayout()
         self.gridLayout_12.setObjectName(_fromUtf8("gridLayout_12"))
         self.spinRequest = QtGui.QSpinBox(self.tab_slowloris)
+        self.spinRequest.setMaximum(99999)
         self.spinRequest.setObjectName(_fromUtf8("spinRequest"))
         self.gridLayout_12.addWidget(self.spinRequest, 1, 1, 1, 1)
         self.slowlorisTarget = QtGui.QLineEdit(self.tab_slowloris)
@@ -399,7 +400,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(7)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

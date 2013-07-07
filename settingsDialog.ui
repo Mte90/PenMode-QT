@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
      <item row="3" column="0">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushSaveSettings">
        <property name="text">
         <string>Save Settings</string>
        </property>
@@ -34,7 +34,7 @@
           <item row="0" column="0">
            <layout class="QGridLayout" name="gridLayout_3">
             <item row="0" column="2">
-             <widget class="QCheckBox" name="checkBox_2">
+             <widget class="QCheckBox" name="nmapHistory">
               <property name="text">
                <string>Nmap</string>
               </property>
@@ -48,42 +48,42 @@
              </widget>
             </item>
             <item row="0" column="0">
-             <widget class="QCheckBox" name="checkBox_3">
+             <widget class="QCheckBox" name="whatwebHisory">
               <property name="text">
                <string>WhatWeb</string>
               </property>
              </widget>
             </item>
             <item row="2" column="0">
-             <widget class="QCheckBox" name="checkBox_5">
+             <widget class="QCheckBox" name="wpscanHistory">
               <property name="text">
                <string>WpScan</string>
               </property>
              </widget>
             </item>
             <item row="2" column="2">
-             <widget class="QCheckBox" name="checkBox_6">
+             <widget class="QCheckBox" name="skipfishHistory">
               <property name="text">
                <string>SkipFish</string>
               </property>
              </widget>
             </item>
             <item row="1" column="2">
-             <widget class="QCheckBox" name="checkBox_4">
+             <widget class="QCheckBox" name="joomscanHistory">
               <property name="text">
                <string>JoomScan</string>
               </property>
              </widget>
             </item>
             <item row="3" column="2">
-             <widget class="QCheckBox" name="checkBox_8">
+             <widget class="QCheckBox" name="slowlorisHistory">
               <property name="text">
                <string>SlowLoris</string>
               </property>
              </widget>
             </item>
             <item row="3" column="0">
-             <widget class="QCheckBox" name="checkBox_7">
+             <widget class="QCheckBox" name="sqlmapHistory">
               <property name="text">
                <string>SqlMap</string>
               </property>
