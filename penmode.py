@@ -48,6 +48,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.pushStartWpScan.clicked.connect(self.wpScan)
 		self.ui.pushStartSkipFish.clicked.connect(self.skipFish)
 		self.ui.pushStartSqlMap.clicked.connect(self.sqlMap)
+		self.ui.pushStartSlowLoris.clicked.connect(self.slowLoris)
 		self.ui.actionSettings.triggered.connect(self.openSetting)
 		
 		#load pencore
@@ -85,6 +86,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 
 	def showTerminal(self,cmd,area):
 		self.startSocat()
+		print(cmd)
 		p = Popen(cmd + ' | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"', shell=True, stdout=PIPE).stdout
 		stdout = ''
 		while True:
@@ -160,6 +162,11 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 	def sqlMap(self):
 		if self.checkTarget(self.ui.sqlmapTarget.text()):
 			self.showTerminal(self.pencore.sqlmap(),self.ui.shellSqlMap)
+	
+	def slowLoris(self):
+		if self.checkTarget(self.ui.slowlorisTarget.text()):
+			self.pencore.set_params('-timeout '+ str(self.ui.spinTimeout.value()) +' -request '+ str(self.ui.spinRequest.value()))
+			self.showTerminal(self.pencore.slowloris(),self.ui.shellSlowLoris)
 			
 def main():
 	app = QApplication(sys.argv)
