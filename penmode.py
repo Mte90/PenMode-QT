@@ -171,13 +171,21 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.ui.slowlorisTarget.setCompleter(completer)
 		else:
 			completer_whatweb = QCompleter(self.history_target['whatweb'],self.ui.whatwebTarget)
+			self.ui.whatwebTarget.setCompleter(completer_whatweb)
 			completer_nmap = QCompleter(self.history_target['nmap'],self.ui.nmapTarget)
+			self.ui.nmapTarget.setCompleter(completer_nmap)
 			completer_nikto = QCompleter(self.history_target['nikto'],self.ui.niktoTarget)
+			self.ui.niktoTarget.setCompleter(completer_nikto)
 			completer_joomscan = QCompleter(self.history_target['joomscan'],self.ui.joomscanTarget)
+			self.ui.joomscanTarget.setCompleter(completer_joomscan)
 			completer_wpscan = QCompleter(self.history_target['wpscan'],self.ui.wpscanTarget)
+			self.ui.wpscanTarget.setCompleter(completer_wpscan)
 			completer_skipfish = QCompleter(self.history_target['skipfish'],self.ui.skipfishTarget)
+			self.ui.skipfishTarget.setCompleter(completer_skipfish)
 			completer_sqlmap = QCompleter(self.history_target['sqlmap'],self.ui.sqlmapTarget)
+			self.ui.sqlmapTarget.setCompleter(completer_sqlmap)
 			completer_slowloris = QCompleter(self.history_target['slowloris'],self.ui.slowlorisTarget)
+			self.ui.slowlorisTarget.setCompleter(completer_slowloris)
 	
 	def showTerminal(self,cmd,area):
 		#Start Socat
