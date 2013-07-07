@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/settingsDialog.ui'
 #
-# Created: Sun Jul  7 21:35:34 2013
+# Created: Sun Jul  7 22:18:22 2013
 #      by: PyQt4 UI code generator 4.10.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -31,9 +31,13 @@ class Ui_settingsDialog(object):
         self.gridLayout_4.setObjectName(_fromUtf8("gridLayout_4"))
         self.gridLayout = QtGui.QGridLayout()
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
-        self.pushSaveSettings = QtGui.QPushButton(settingsDialog)
-        self.pushSaveSettings.setObjectName(_fromUtf8("pushSaveSettings"))
-        self.gridLayout.addWidget(self.pushSaveSettings, 3, 0, 1, 1)
+        self.buttonBox = QtGui.QDialogButtonBox(settingsDialog)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
+        self.gridLayout.addWidget(self.buttonBox, 3, 0, 1, 1)
+        self.enableAdvanced = QtGui.QCheckBox(settingsDialog)
+        self.enableAdvanced.setObjectName(_fromUtf8("enableAdvanced"))
+        self.gridLayout.addWidget(self.enableAdvanced, 2, 0, 1, 1)
         self.verticalLayout = QtGui.QVBoxLayout()
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
         self.GroupBox = QtGui.QGroupBox(settingsDialog)
@@ -72,9 +76,6 @@ class Ui_settingsDialog(object):
         self.gridLayout_2.addWidget(self.resetHistory, 2, 0, 1, 1)
         self.verticalLayout.addWidget(self.GroupBox)
         self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
-        self.enableAdvanced = QtGui.QCheckBox(settingsDialog)
-        self.enableAdvanced.setObjectName(_fromUtf8("enableAdvanced"))
-        self.gridLayout.addWidget(self.enableAdvanced, 2, 0, 1, 1)
         self.gridLayout_4.addLayout(self.gridLayout, 0, 0, 1, 1)
 
         self.retranslateUi(settingsDialog)
@@ -82,7 +83,7 @@ class Ui_settingsDialog(object):
 
     def retranslateUi(self, settingsDialog):
         settingsDialog.setWindowTitle(_translate("settingsDialog", "Settings", None))
-        self.pushSaveSettings.setText(_translate("settingsDialog", "Save Settings", None))
+        self.enableAdvanced.setText(_translate("settingsDialog", "Enable field for manual parameter", None))
         self.GroupBox.setTitle(_translate("settingsDialog", "History", None))
         self.nmapHistory.setText(_translate("settingsDialog", "Nmap", None))
         self.niktoHistory.setText(_translate("settingsDialog", "Nikto", None))
@@ -93,5 +94,4 @@ class Ui_settingsDialog(object):
         self.slowlorisHistory.setText(_translate("settingsDialog", "SlowLoris", None))
         self.sqlmapHistory.setText(_translate("settingsDialog", "SqlMap", None))
         self.resetHistory.setText(_translate("settingsDialog", "Reset History", None))
-        self.enableAdvanced.setText(_translate("settingsDialog", "Enable field for manual parameter", None))
 

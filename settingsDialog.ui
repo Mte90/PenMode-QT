@@ -17,9 +17,16 @@
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
      <item row="3" column="0">
-      <widget class="QPushButton" name="pushSaveSettings">
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QCheckBox" name="enableAdvanced">
        <property name="text">
-        <string>Save Settings</string>
+        <string>Enable field for manual parameter</string>
        </property>
       </widget>
      </item>
@@ -102,13 +109,6 @@
         </widget>
        </item>
       </layout>
-     </item>
-     <item row="2" column="0">
-      <widget class="QCheckBox" name="enableAdvanced">
-       <property name="text">
-        <string>Enable field for manual parameter</string>
-       </property>
-      </widget>
      </item>
     </layout>
    </item>

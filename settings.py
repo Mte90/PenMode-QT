@@ -15,7 +15,7 @@ class settingsDialog ( QDialog , Ui_settingsDialog):
 		QDialog.__init__( self, parent )
 		self.ui = Ui_settingsDialog()
 		self.ui.setupUi( self )
-		self.ui.pushSaveSettings.clicked.connect(self.saveSettings)
+		self.ui.buttonBox.accepted.connect(self.saveSettings)
 		
 		# Load settings
 		if self.settings.value('whatweb_history') == 'True':
@@ -92,4 +92,5 @@ class settingsDialog ( QDialog , Ui_settingsDialog):
 			self.settings.setValue('parameter_field','True')
 		else:
 			self.settings.setValue('parameter_field','False')
-		
+			
+		self.close()

@@ -50,25 +50,8 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.pushStartSqlMap.clicked.connect(self.sqlMap)
 		self.ui.pushStartSlowLoris.clicked.connect(self.slowLoris)
 		self.ui.actionSettings.triggered.connect(self.openSetting)
-		
-		#Check Field Parameter
-		if self.settings.value('parameter_field') == 'True':
-			self.ui.labelParameter_1.setEnabled(True)
-			self.ui.whatwebParameter.setEnabled(True)
-			self.ui.labelParameter_2.setEnabled(True)
-			self.ui.nmapParameter.setEnabled(True)
-			self.ui.labelParameter_3.setEnabled(True)
-			self.ui.niktoParameter.setEnabled(True)
-			self.ui.labelParameter_4.setEnabled(True)
-			self.ui.joomscanParameter.setEnabled(True)
-			self.ui.labelParameter_5.setEnabled(True)
-			self.ui.wpscanParameter.setEnabled(True)
-			self.ui.labelParameter_6.setEnabled(True)
-			self.ui.skipfishParameter.setEnabled(True)
-			self.ui.labelParameter_7.setEnabled(True)
-			self.ui.sqlmapParameter.setEnabled(True)
-			self.ui.labelParameter_8.setEnabled(True)
-			self.ui.slowlorisParameter.setEnabled(True)
+		#Load Config
+		self.loadSetting()
 		
 		#load pencore
 		self.pencore = penmode()
@@ -101,7 +84,45 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		window = QDialog()
 		ui = settingsDialog()
 		ui.setupUi(window)
-		ui.exec_()
+		if ui.exec_() == 0:
+			self.loadSetting()
+		
+	def loadSetting(self):
+		#Check Field Parameter
+		if self.settings.value('parameter_field') == 'True':
+			self.ui.labelParameter_1.setEnabled(True)
+			self.ui.whatwebParameter.setEnabled(True)
+			self.ui.labelParameter_2.setEnabled(True)
+			self.ui.nmapParameter.setEnabled(True)
+			self.ui.labelParameter_3.setEnabled(True)
+			self.ui.niktoParameter.setEnabled(True)
+			self.ui.labelParameter_4.setEnabled(True)
+			self.ui.joomscanParameter.setEnabled(True)
+			self.ui.labelParameter_5.setEnabled(True)
+			self.ui.wpscanParameter.setEnabled(True)
+			self.ui.labelParameter_6.setEnabled(True)
+			self.ui.skipfishParameter.setEnabled(True)
+			self.ui.labelParameter_7.setEnabled(True)
+			self.ui.sqlmapParameter.setEnabled(True)
+			self.ui.labelParameter_8.setEnabled(True)
+			self.ui.slowlorisParameter.setEnabled(True)
+		else:
+			self.ui.labelParameter_1.setEnabled(False)
+			self.ui.whatwebParameter.setEnabled(False)
+			self.ui.labelParameter_2.setEnabled(False)
+			self.ui.nmapParameter.setEnabled(False)
+			self.ui.labelParameter_3.setEnabled(False)
+			self.ui.niktoParameter.setEnabled(False)
+			self.ui.labelParameter_4.setEnabled(False)
+			self.ui.joomscanParameter.setEnabled(False)
+			self.ui.labelParameter_5.setEnabled(False)
+			self.ui.wpscanParameter.setEnabled(False)
+			self.ui.labelParameter_6.setEnabled(False)
+			self.ui.skipfishParameter.setEnabled(False)
+			self.ui.labelParameter_7.setEnabled(False)
+			self.ui.sqlmapParameter.setEnabled(False)
+			self.ui.labelParameter_8.setEnabled(False)
+			self.ui.slowlorisParameter.setEnabled(False)
 
 	def showTerminal(self,cmd,area):
 		#Start Socat
