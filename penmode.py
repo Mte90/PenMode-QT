@@ -13,8 +13,20 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 	#var initialization
 	settings = QSettings('Phos','Penmode')
 	settings.setFallbacksEnabled(False)
+	history = QSettings('Phos','Penmode_History')
+	history.setFallbacksEnabled(False)
 	version = 'V 0.1 Alpha'
-
+	
+	history_target = {}
+	history_target['whatweb'] = []
+	history_target['nmap'] = []
+	history_target['nikto'] = []
+	history_target['joomscan'] = []
+	history_target['wpscan'] = []
+	history_target['skipfish'] = []
+	history_target['sqlmap'] = []
+	history_target['slowloris'] = []
+	
 	def __init__ ( self, parent = None ):
 		QMainWindow.__init__( self, parent )
 		self.ui = Ui_MainWindow()
@@ -52,6 +64,8 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.actionSettings.triggered.connect(self.openSetting)
 		#Load Config
 		self.loadSetting()
+		#Load History
+		self.loadHistory()
 		
 		#load pencore
 		self.pencore = penmode()
@@ -124,7 +138,22 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.ui.sqlmapParameter.setEnabled(False)
 			self.ui.labelParameter_8.setEnabled(False)
 			self.ui.slowlorisParameter.setEnabled(False)
-
+	
+	def addHistory(self,tool,text):
+		if text not in self.history_target[tool]:
+			self.history_target[tool].append(text)
+			self.history.setValue(tool,';'.join(self.history_target[tool]))
+			
+	def loadHistory(self):
+		self.history_target['whatweb'] = str(self.history.value('whatweb')).split(';')
+		self.history_target['nmap'] = str(self.history.value('nma')).split(';')
+		self.history_target['nikto'] = str(self.history.value('nikto')).split(';')
+		self.history_target['joomscan'] = str(self.history.value('joomscan')).split(';')
+		self.history_target['wpscan'] = str(self.history.value('wpscan')).split(';')
+		self.history_target['skipfish'] = str(self.history.value('skipfish')).split(';')
+		self.history_target['sqlmap'] = str(self.history.value('sqlmap')).split(';')
+		self.history_target['slowloris'] = str(self.history.value('slowloris')).split(';')
+	
 	def showTerminal(self,cmd,area):
 		#Start Socat
 		self.startSocat()
@@ -181,6 +210,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 
 	def whatWeb(self):
 		if self.checkTarget(self.ui.whatwebTarget.text()):
+			self.addHistory('whatweb',self.ui.whatwebTarget.text())
 			self.showTerminal(self.pencore.whatweb(),self.ui.shellWhatWeb)
 	
 	def nmap(self):

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/mainWindow.ui'
 #
-# Created: Sun Jul  7 22:09:26 2013
+# Created: Sun Jul  7 22:44:15 2013
 #      by: PyQt4 UI code generator 4.10.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,7 +26,7 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(651, 433)
+        MainWindow.resize(651, 425)
         MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
@@ -97,11 +97,9 @@ class Ui_MainWindow(object):
         self.gridLayout_7.addWidget(self.pushStartNmap, 0, 0, 1, 1)
         self.gridLayout_6.addLayout(self.gridLayout_7, 2, 1, 1, 1)
         self.labelParameter_2 = QtGui.QLabel(self.tab_nmap)
-        self.labelParameter_2.setEnabled(False)
         self.labelParameter_2.setObjectName(_fromUtf8("labelParameter_2"))
         self.gridLayout_6.addWidget(self.labelParameter_2, 1, 0, 1, 1)
         self.nmapParameter = QtGui.QLineEdit(self.tab_nmap)
-        self.nmapParameter.setEnabled(False)
         self.nmapParameter.setObjectName(_fromUtf8("nmapParameter"))
         self.gridLayout_6.addWidget(self.nmapParameter, 1, 1, 1, 1)
         self.gridLayout_8.addLayout(self.gridLayout_6, 0, 0, 1, 1)
@@ -416,7 +414,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(7)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -424,6 +422,11 @@ class Ui_MainWindow(object):
         self.pushStartWhatWeb.setText(_translate("MainWindow", "Start", None))
         self.label_3.setText(_translate("MainWindow", "Target", None))
         self.labelParameter_1.setText(_translate("MainWindow", "Parameter", None))
+        self.shellWhatWeb.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Oxygen\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_whatweb), _translate("MainWindow", "WhatWeb", None))
         self.label_4.setText(_translate("MainWindow", "Target", None))
         self.pushStartNmap.setText(_translate("MainWindow", "Start", None))
