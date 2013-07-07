@@ -98,10 +98,17 @@
             </item>
            </layout>
           </item>
-          <item row="2" column="0">
+          <item row="3" column="0">
            <widget class="QPushButton" name="resetHistory">
             <property name="text">
              <string>Reset History</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QCheckBox" name="historyAll">
+            <property name="text">
+             <string>History unique for all tool</string>
             </property>
            </widget>
           </item>

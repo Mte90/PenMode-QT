@@ -44,6 +44,9 @@ class settingsDialog ( QDialog , Ui_settingsDialog):
 		
 		if self.settings.value('parameter_field') == 'True':
 			self.ui.enableAdvanced.setChecked(True)
+		
+		if self.settings.value('all_history') == 'True':
+			self.ui.historyAll.setChecked(True)
 
 	def saveSettings(self):
 		# Tool history
@@ -86,6 +89,11 @@ class settingsDialog ( QDialog , Ui_settingsDialog):
 			self.settings.setValue('slowloris_history','True')
 		else:
 			self.settings.setValue('slowloris_history','False')
+			
+		if self.ui.historyAll.isChecked():
+			self.settings.setValue('all_history','True')
+		else:
+			self.settings.setValue('all_history','False')
 		
 		# Enable parameter field
 		if self.ui.enableAdvanced.isChecked():
