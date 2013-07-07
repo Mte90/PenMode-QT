@@ -6,6 +6,7 @@ from subprocess import Popen, PIPE
 
 from pencore.pencore import penmode
 from ui_mainWindow import Ui_MainWindow
+from settings import settingsDialog
 
 class MainWindow ( QMainWindow , Ui_MainWindow):
 
@@ -47,7 +48,8 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.pushStartWpScan.clicked.connect(self.wpScan)
 		self.ui.pushStartSkipFish.clicked.connect(self.skipFish)
 		self.ui.pushStartSqlMap.clicked.connect(self.sqlMap)
-
+		self.ui.actionSettings.triggered.connect(self.openSetting)
+		
 		#load pencore
 		self.pencore = penmode()
 		self.pencore.set_gui(1)
@@ -73,7 +75,14 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			Popen('killall socat', shell=True, stdout=PIPE)
 		signal.signal(signal.SIGINT, signal.SIG_DFL)
 		self.show()
-	
+		
+	def openSetting(self):
+		#i need to explain this??
+		window = QDialog()
+		ui = settingsDialog()
+		ui.setupUi(window)
+		ui.exec_()
+
 	def showTerminal(self,cmd,area):
 		self.startSocat()
 		p = Popen(cmd + ' | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"', shell=True, stdout=PIPE).stdout
