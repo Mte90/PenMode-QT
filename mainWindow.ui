@@ -29,7 +29,7 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>7</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_whatweb">
          <attribute name="title">
@@ -666,8 +666,11 @@ p, li { white-space: pre-wrap; }
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="1">
        <widget class="QPushButton" name="pushSocat">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
-         <string>Enable</string>
+         <string>Start</string>
         </property>
        </widget>
       </item>

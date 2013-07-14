@@ -56,7 +56,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.ui.shellSlowLoris.setStyleSheet(self.shell_color)
 		self.ui.shellSlowLoris.setReadOnly(True)
 		#Slot
-		self.ui.pushSocat.clicked.connect(self.startStopSocat)
+		self.ui.pushSocat.clicked.connect(self.stopSocat)
 		self.ui.pushTor.clicked.connect(self.startStopTor)
 		self.ui.pushStartWhatWeb.clicked.connect(self.whatWeb)
 		self.ui.pushStartNmap.clicked.connect(self.nmap)
@@ -219,24 +219,25 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 	def startSocat(self):
 		Popen('killall socat', shell=True, stdout=PIPE)
 		self.pencore.start_socat()
-		self.ui.pushSocat.setText('Disable')
+		self.ui.pushSocat.setText('Kill')
+		self.ui.pushSocat.setEnabled(True)
 				
-	def startStopSocat(self):
-		if self.pencore.get_target() != None:
-			if self.checkSocat() == 1:
-				Popen('killall socat', shell=True, stdout=PIPE)
-				self.ui.pushSocat.setText('Enable')
+	def stopSocat(self):
+		if self.checkSocat() == 1:
+			Popen('killall socat', shell=True, stdout=PIPE)
+			self.ui.pushSocat.setText('Start')
 			
+
 	def checkTor(self):
 		return self.pencore.check_tor()
 	
 	def startStopTor(self):
 		if self.checkTor() == 1:
 			Popen('/etc/init.d/tor stop', shell=True, stdout=PIPE)
-			self.ui.pushTor.setText('Enable')
+			self.ui.pushTor.setText('Start')
 		else:
 			self.pencore.start_tor()
-			self.ui.pushTor.setText('Disable')
+			self.ui.pushTor.setText('Kill')
 			
 	def checkTarget(self,target):
 		if self.checkTor() == 0:

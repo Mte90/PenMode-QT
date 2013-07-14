@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/mainWindow.ui'
 #
-# Created: Sun Jul  7 22:44:15 2013
+# Created: Sun Jul 14 15:37:38 2013
 #      by: PyQt4 UI code generator 4.10.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -342,6 +342,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2 = QtGui.QGridLayout()
         self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
         self.pushSocat = QtGui.QPushButton(self.centralwidget)
+        self.pushSocat.setEnabled(False)
         self.pushSocat.setObjectName(_fromUtf8("pushSocat"))
         self.gridLayout_2.addWidget(self.pushSocat, 0, 1, 1, 1)
         self.label = QtGui.QLabel(self.centralwidget)
@@ -414,7 +415,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(7)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -460,7 +461,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_slowloris), _translate("MainWindow", "SlowLoris", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_exploit), _translate("MainWindow", "Exploit", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_dork), _translate("MainWindow", "Dork", None))
-        self.pushSocat.setText(_translate("MainWindow", "Enable", None))
+        self.pushSocat.setText(_translate("MainWindow", "Start", None))
         self.label.setText(_translate("MainWindow", "Socat", None))
         self.label_2.setText(_translate("MainWindow", "Tor", None))
         self.pushTor.setText(_translate("MainWindow", "Enable", None))
