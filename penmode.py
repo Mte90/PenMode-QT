@@ -32,6 +32,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		QMainWindow.__init__( self, parent )
 		self.ui = Ui_MainWindow()
 		self.ui.setupUi( self )
+		#Check if executed with root permission
 		if not os.geteuid()==0:
 			QMessageBox.critical(self, "Error", "Root user required for use Penmode-QT!")
 			sys.exit()
@@ -89,13 +90,16 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.ui.sqlmapTarget.setText(target)
 			self.ui.slowlorisTarget.setText(target)
 		
+		#Execute tor
 		if self.checkTor() == 1:
 			self.ui.pushTor.setText('Disable')
 		else:
 			self.startStopTor()
-			
+		
+		#Check socat
 		if self.checkSocat() == 1:
 			Popen('killall socat', shell=True, stdout=PIPE)
+			
 		signal.signal(signal.SIGINT, signal.SIG_DFL)
 		self.show()
 		
@@ -145,11 +149,13 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			self.ui.slowlorisParameter.setEnabled(False)
 	
 	def addHistory(self,tool,text):
+		#add the domain in the history if not exist
 		if text not in self.history_target[tool]:
 			self.history_target[tool].append(text)
 			self.history.setValue(tool,';'.join(str(self.history_target[tool])))
 			
 	def loadHistory(self):
+		#variable for every tool
 		self.history_target['whatweb'] = str(self.history.value('whatweb')).split(';')
 		self.history_target['nmap'] = str(self.history.value('nma')).split(';')
 		self.history_target['nikto'] = str(self.history.value('nikto')).split(';')
@@ -158,6 +164,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		self.history_target['skipfish'] = str(self.history.value('skipfish')).split(';')
 		self.history_target['sqlmap'] = str(self.history.value('sqlmap')).split(';')
 		self.history_target['slowloris'] = str(self.history.value('slowloris')).split(';')
+		#Check history for all tool
 		if self.settings.value('all_history') == 'True':
 			self.history_target['all'] += self.history_target['whatweb'] + self.history_target['nmap']
 			self.history_target['all'] += self.history_target['nikto'] + self.history_target['joomscan']
@@ -219,9 +226,6 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 			if self.checkSocat() == 1:
 				Popen('killall socat', shell=True, stdout=PIPE)
 				self.ui.pushSocat.setText('Enable')
-			else:
-				self.pencore.start_socat()
-				self.ui.pushSocat.setText('Disable')
 			
 	def checkTor(self):
 		return self.pencore.check_tor()
