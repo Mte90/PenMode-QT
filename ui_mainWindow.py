@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/mte90/Desktop/Prog/Penmode-Qt/mainWindow.ui'
 #
-# Created: Sun Jul 14 15:37:38 2013
+# Created: Sun Jul 14 15:39:57 2013
 #      by: PyQt4 UI code generator 4.10.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -464,7 +464,7 @@ class Ui_MainWindow(object):
         self.pushSocat.setText(_translate("MainWindow", "Start", None))
         self.label.setText(_translate("MainWindow", "Socat", None))
         self.label_2.setText(_translate("MainWindow", "Tor", None))
-        self.pushTor.setText(_translate("MainWindow", "Enable", None))
+        self.pushTor.setText(_translate("MainWindow", "Start", None))
         self.menuHelp.setTitle(_translate("MainWindow", "Help", None))
         self.menuAbout.setTitle(_translate("MainWindow", "About", None))
         self.menuSettings.setTitle(_translate("MainWindow", "Settings", None))
