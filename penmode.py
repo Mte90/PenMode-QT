@@ -32,6 +32,9 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		QMainWindow.__init__( self, parent )
 		self.ui = Ui_MainWindow()
 		self.ui.setupUi( self )
+		if not os.geteuid()==0:
+			QMessageBox.critical(self, "Error", "Root user required for use Penmode-QT!")
+			sys.exit()
 		self.setWindowTitle('PenMode-QT - ' + self.version)
 		self.shell_color = 'QTextEdit { background-color: black; color:#18F018; }'
 		#Color Shell
@@ -240,6 +243,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 		else:
 			self.pencore.set_target(target)
 			return True
+		
 
 	def whatWeb(self):
 		if self.checkTarget(self.ui.whatwebTarget.text()):
@@ -293,6 +297,8 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 	def slowLoris(self):
 		if self.checkTarget(self.ui.slowlorisTarget.text()):
 			self.pencore.set_params('-timeout '+ str(self.ui.spinTimeout.value()) +' -request '+ str(self.ui.spinRequest.value()))
+			if self.settings.value('parameter_field') == 'True':
+				self.pencore.set_params(self.ui.slowlorisParameter.text())
 			self.showTerminal(self.pencore.slowloris(),self.ui.shellSlowLoris)
 			
 def main():
