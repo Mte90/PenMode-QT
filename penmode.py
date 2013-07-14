@@ -144,7 +144,7 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 	def addHistory(self,tool,text):
 		if text not in self.history_target[tool]:
 			self.history_target[tool].append(text)
-			self.history.setValue(tool,';'.join(self.history_target[tool]))
+			self.history.setValue(tool,';'.join(str(self.history_target[tool])))
 			
 	def loadHistory(self):
 		self.history_target['whatweb'] = str(self.history.value('whatweb')).split(';')
@@ -244,30 +244,50 @@ class MainWindow ( QMainWindow , Ui_MainWindow):
 	def whatWeb(self):
 		if self.checkTarget(self.ui.whatwebTarget.text()):
 			self.addHistory('whatweb',self.ui.whatwebTarget.text())
+			if self.settings.value('parameter_field') == 'True':
+				self.pencore.set_params(self.ui.whatwebParameter.text())
 			self.showTerminal(self.pencore.whatweb(),self.ui.shellWhatWeb)
 	
 	def nmap(self):
 		if self.checkTarget(self.ui.nmapTarget.text()):
+			self.addHistory('nmap',self.ui.whatwebTarget.text())
+			if self.settings.value('parameter_field') == 'True':
+				self.pencore.set_params(self.ui.nmapParameter.text())
 			self.showTerminal(self.pencore.nmap(),self.ui.shellNmap)
 	
 	def nikto(self):
 		if self.checkTarget(self.ui.niktoTarget.text()):
+			self.addHistory('nikto',self.ui.whatwebTarget.text())
+			if self.settings.value('parameter_field') == 'True':
+				self.pencore.set_params(self.ui.niktoParameter.text())
 			self.showTerminal(self.pencore.nikto(),self.ui.shellNikto)
 
 	def joomScan(self):
 		if self.checkTarget(self.ui.joomscanTarget.text()):
+			self.addHistory('joomscan',self.ui.whatwebTarget.text())
+			if self.settings.value('parameter_field') == 'True':
+				self.pencore.set_params(self.ui.joomscanParameter.text())
 			self.showTerminal(self.pencore.joomscan(),self.ui.shellJoomScan)
 			
 	def wpScan(self):
 		if self.checkTarget(self.ui.wpscanTarget.text()):
+			self.addHistory('wpscan',self.ui.whatwebTarget.text())
+			if self.settings.value('parameter_field') == 'True':
+				self.pencore.set_params(self.ui.wpscanParameter.text())
 			self.showTerminal(self.pencore.wpscan(),self.ui.shellWpScan)
 
 	def skipFish(self):
 		if self.checkTarget(self.ui.skipfishTarget.text()):
+			self.addHistory('skipfish',self.ui.whatwebTarget.text())
+			if self.settings.value('parameter_field') == 'True':
+				self.pencore.set_params(self.ui.skipfishParameter.text())
 			self.showTerminal(self.pencore.skipfish(),self.ui.shellSkipFish)
 			
 	def sqlMap(self):
 		if self.checkTarget(self.ui.sqlmapTarget.text()):
+			self.addHistory('sqlmap',self.ui.whatwebTarget.text())
+			if self.settings.value('parameter_field') == 'True':
+				self.pencore.set_params(self.ui.sqlmapParameter.text())
 			self.showTerminal(self.pencore.sqlmap(),self.ui.shellSqlMap)
 	
 	def slowLoris(self):
